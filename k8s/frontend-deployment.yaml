@@ -18,6 +18,22 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 3000
+        readinessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 5 
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
+        livenessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 2 
+          successThreshold: 1
+          failureThreshold: 3
         resources:
           limits:
             memory: "256Mi"
