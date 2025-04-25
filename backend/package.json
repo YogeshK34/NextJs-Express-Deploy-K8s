@@ -1,7 +1,7 @@
 {
   "name": "k8s-demo-backend",
   "version": "1.0.0",
-  "description": "Simple backend for Kubernetes demo",
+  "description": "Backend for Kubernetes demo with ConfigMaps and Secrets",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

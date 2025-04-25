@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  port: "3001"
+  api-version: "1.0.0"
+  environment: "production"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config-files
+data:
+  "theme.txt": "dark"
+  "features.json": |
+    {
+      "enableUserAuth": true,
+      "enableAnalytics": false,
+      "maxItemsPerPage": 20,
+      "cacheTimeSeconds": 300
+    }
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  api-url: "http://backend-service:3001"

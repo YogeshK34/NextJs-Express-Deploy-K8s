@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "K8s Demo App",
-  description: "A simple full-stack app deployed on Kubernetes",
+  description: "A simple full-stack app deployed on Kubernetes with ConfigMaps and Secrets",
 }
 
 export default function RootLayout({

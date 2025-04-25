@@ -11,6 +11,11 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+# Set build-time environment variables
+ARG NEXT_PUBLIC_API_URL=http://localhost:30001
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+
 RUN npm run build
 
 # Production image, copy all the files and run next
