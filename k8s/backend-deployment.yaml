@@ -36,6 +36,17 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
+        env: 
+        - name: APP_NAME
+          valueFrom: 
+            configMapKeyRef:
+              name: my-app-config
+              key: APP_NAME
+        - name: LOG_LEVEL
+          valueFrom: 
+            configMapKeyRef: 
+              name: my-app-config
+              key: LOG_LEVEL
 ---
 apiVersion: v1
 kind: Service
